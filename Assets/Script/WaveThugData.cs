@@ -9,7 +9,6 @@ public class WaveThugData : ScriptableObject
     [System.Serializable]
     public class WaveData
     {
-        public int waveNumber;
         public int numberOfThug;
     }
 
