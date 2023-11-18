@@ -10,6 +10,7 @@ public class ThugSystem : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float desiredDistance = 2f;
     
     
     private void Awake()
@@ -33,13 +34,10 @@ public class ThugSystem : MonoBehaviour
 
             Vector3 velocity = _navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-       
+            
             _animator.SetFloat("moveX", localVelocity.x);
             _animator.SetFloat("moveY", localVelocity.y);
-            
             _navMeshAgent.SetDestination(targetObject.transform.position);
-            
-            
         }
         else
         {
